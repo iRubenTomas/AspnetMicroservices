@@ -6,8 +6,7 @@ services:
     restart: always
     ports:
       - "3000:3000"
-    volumes:
-      - mongo_data_client:/data/db
+    
 
   catalogdb:
     container_name: catalogdb
