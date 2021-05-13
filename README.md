@@ -25,7 +25,23 @@ docker ps -aq
 docker stop $(docker stop -aq)
 
 (Delete all the cotainers running on my machine)
-docker rm$(docker rm ps -aq)
+docker rm $(docker ps -aq)
 
 (Delete all the images running on my machine)
 docker rmi $(docker images ps -q)
+
+(Check logs)
+docker logs -f aspnetrun-redis
+
+(To execute commands inside of a container)
+docker exec -it aspnetrun-redis /bin/bash
+
+#Redis
+(To execute redis commands)
+redis-cli 
+
+set key
+
+get Key
+
+Through Redis we will save the basket from each user where the key is the username and the value will be a json object containing all the prodcuts inside the user's basket
